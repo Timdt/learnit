@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="ad.size" content="width=300,height=600">
+    <meta name="author" content="treeonline.nl">
+    <title>htmlanimatie</title>
+    <script src="https://s0.2mdn.net/ads/studio/cached_libs/tweenmax_1.20.0_d360d9a082ccc13b1a1a9b153f86b378_min.js"></script>
+    <script src="https://s0.2mdn.net/ads/studio/cached_libs/timelinemax_1.20.0_d82c0635e1c062329eb780229648d97f_min.js"></script>
+<Style>
+
+    body{
+      margin:0px 0px 0px 0px;
+      padding:0px 0px 0px 0px;
+
+    }
+
+    #animation {
+      width: 300px;
+      height: 600px;
+      border:solid black 1px;
+      margin:0 auto;
+      background-image: url("images/bannerleeg.png");
+      overflow:hidden;
+      position: relative;
+    }
+
+    .tekst1{
+      font-size:26px;
+      color:#283354;
+      font-family:sans-serif;
+      font-weight: 400;
+      position: absolute;
+      top:45px;
+      padding:10px;
+      text-align: left;
+      left:14px;
+
+    }
+
+    .tekst2{
+      font-size:26px;
+      color:#283354;
+      font-family:sans-serif;
+      font-weight: 400;
+      position: absolute;
+      top:45px;
+      padding:10px;
+      text-align: left;
+      left:14px;
+
+
+    }
+
+    .tekst3{
+      font-size:26px;
+      color:#283354;
+      font-family:sans-serif;
+      font-weight: 400;
+      position: absolute;
+      top:45px;
+      padding:10px;
+      text-align: left;
+      left:14px;
+
+    }
+
+    .wplogo{
+      width:100px;
+      height:100px;
+      position: absolute;
+      top:270px;
+      left:93px;
+    }
+
+    .wpdash {
+      width:220px;
+      height:127px;
+      position: absolute;
+      top:258px;
+      left:33px;
+    }
+
+    .theme {
+      width:220px;
+      height:127px;
+      position: absolute;
+      top:258px;
+      left:33px;
+    }
+
+    #button {
+      background:#f87200;
+      color:white;
+      font-size:19px;
+      font-family: arial;
+      top:525px;
+      left:67px;
+      text-align: center;
+      text-decoration: none;
+      position:absolute;
+      border-radius:10px;
+      padding:12px;
+    }
+
+  .gradient{
+  background: #9af600; /* Old browsers */
+  background: -moz-linear-gradient(top,  #f69f00 0%, #a0fd00 50%, #90e700 51%, #a0fe00 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#9af600), color-stop(50%,#a0fd00), color-stop(51%,#90e700), color-stop(100%,#a0fe00)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #f69f00 0%,#a0fd00 50%,#90e700 51%,#a0fe00 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #f69f00 0%,#a0fd00 50%,#90e700 51%,#a0fe00 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #f69f00 0%,#a0fd00 50%,#90e700 51%,#a0fe00 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #f69f00 0%,#a0fd00 50%,#90e700 51%,#a0fe00 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#9af600', endColorstr='#a0fe00',GradientType=0 ); /* IE6-9 */
+
+}
+
+
+
+
+</style>
+  </head>
+  <body>
+
+<div id="animation">
+<div id="tekstwrapper">
+<p class="tekst1"><strong>U wilt wordpress leren maar heeft <br> weinig tijd?</strong></p>
+<p class="tekst2"><strong>Leer wordpress in uw eigen tempo.</strong></p>
+<p class="tekst3"><strong>3-Daagse Wordpress cursus op locaties in heel Nederland</strong></p>
+
+<img class="wplogo" src="images/wp.png"/>
+<img class="wpdash" src="images/wpdash.jpg"/>
+<img class="theme" src="images/theme.jpg"/>
+</div>
+
+
+
+<a href="https/www.google.nl" target="_blank" id="button" class="gradient"><strong>Meer informatie</strong></a>
+
+</div>
+
+<script>
+
+var  tekst1 = document.getElementsByClassName(".tekst1"),
+     tekst2 = document.getElementsByClassName(".tekst2"),
+     tekst3 = document.getElementsByClassName(".tekst3"),
+     wplogo = document.getElementsByClassName(".wplogo"),
+     wpdash = document.getElementsByClassName(".wpdash"),
+     theme = document.getElementsByClassName(".theme"),
+     button = document.getElementsByClassName(".button")
+    var button = document.getElementById("button");
+
+    function timelineone(){
+      var tl = new TimelineMax();
+      tl.add("intro")
+      tl.from(".tekst1",0.6,{x:250,ease:Back.easeOut},"intro")
+      tl.add("bouncedelay","-=0.6")
+      tl.add("introout","+=2")
+      tl.to(".tekst1",0.2,{autoAlpha:0},"introout")
+      tl.from(".wplogo",1.2,{scale:0,autoAlpha:0,ease:Elastic.easeOut},"bouncedelay")
+      tl.to(".wplogo",0.3,{autoAlpha:0},"introout")
+      return tl;
+    }
+
+    function timelinetwo(){
+      var tl = new TimelineMax();
+      tl.add("intro")
+      tl.from(".tekst2",0.6,{x:400,ease:Back.easeOut},"intro")
+      tl.add("introdelay", "-=0.6")
+      tl.add("wpdashout", "+=2")
+      tl.to(".tekst2",0.3,{autoAlpha:0},"wpdashout")
+    //  tl.from(".wpdash",0.4,{scale:0},"introdelay")
+      tl.fromTo(".wpdash", 0.6, { clip:"rect(125px 300px 0px 0px)"}, { clip:"rect(0px 300px 250px 0px)"},"introdelay")
+      tl.to(".wpdash",0.3,{scale:0},"wpdashout")
+      return tl;
+
+    }
+
+    function timelinethree(){
+    var tl = new TimelineMax();
+    tl.add("intro")
+    tl.from(".tekst3",0.6,{x:400,ease:Back.easeOut},"intro")
+    tl.add("introdelay", "-=0.6")
+    tl.fromTo(".theme", 0.6, { clip:"rect(125px 300px 0px 0px)"}, { clip:"rect(0px 300px 250px 0px)"},"introdelay")
+    //tl.from(".theme",0.4,{scale:0})
+    //.from(button, 0.5, {autoAlpha:0, scale:0.1, ease:Back.easeOut},"-=0.8") //learn more knop van onzichtbaar naar zichtbaar van klein naar groot
+    .add(TweenMax.to(button, 0.6, {boxShadow:"0px 0px 20px 2px #f69f00", repeat:4,repeatDelay:0.4, yoyo:true},"-=0.8"))
+    return tl;
+    }
+
+    function createmaster(){
+      var master = new TimelineMax({
+    repeat: 0, // infinite repeat
+    repeatDelay: 4 // you can set a delay if you want
+    });
+      master.add(timelineone()),
+      master.add(timelinetwo(),"-=0.4"),
+      master.add(timelinethree(),"-=0.4"),
+      master.timeScale(0.8);
+
+    }
+
+
+
+
+
+    var button = document.getElementById("button");
+      button.addEventListener("mouseover", onHoverOver);
+      button.addEventListener("mouseout", onHoverOut);
+
+
+    function onHoverOver(e){
+      TweenMax.fromTo( button, 0.6, { boxShadow:"0px 0px 0px 0px orange"}, {boxShadow:"0px 0px 20px 2px #f69f00", repeat:-1, yoyo:true});
+    }
+
+    function onHoverOut(e){
+      TweenMax.to( button, 0.2, {boxShadow:"0px 0px 0px 0px #f69f00"});
+    }
+
+
+
+    createmaster();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+  </body>
+</html>
